@@ -341,7 +341,7 @@
 
     <!-- Controles de música y tema -->
     <div class="controls">
-        <button id="toggle-music">🎵 Música</button>
+        
         <button id="toggle-theme">🌙 Modo Nocturno</button>
     </div>
 
@@ -356,7 +356,7 @@
         const sound = new Audio('https://freesound.org/data/previews/523/523773_11636669-lq.mp3');
 
         paragraphs.forEach(paragraph => {
-            paragraph.addEventListener('click', () => {
+            paragraph.addEventListener('touchstart', () => {
                 sound.play();
                 paragraph.classList.toggle('highlight');
             });
@@ -368,19 +368,7 @@
             progressBar.style.width = `${scroll * 100}%`;
         });
 
-        // Música de fondo
-        let musicPlaying = false;
-        const backgroundMusic = new Audio('https://freesound.org/data/previews/448/448687_838627-lq.mp3');
-        backgroundMusic.loop = true;
-
-        musicButton.addEventListener('click', () => {
-            if (musicPlaying) {
-                backgroundMusic.pause();
-            } else {
-                backgroundMusic.play();
-            }
-            musicPlaying = !musicPlaying;
-        });
+       
 
         // Modo nocturno
         themeButton.addEventListener('click', () => {
