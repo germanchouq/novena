@@ -348,17 +348,14 @@
     <script>
         const paragraphs = document.querySelectorAll('.page p');
         const progressBar = document.getElementById('progress-bar');
-        const musicButton = document.getElementById('toggle-music');
         const themeButton = document.getElementById('toggle-theme');
         let isNightMode = false;
 
-        // Sonido al seleccionar párrafo
-        const sound = new Audio('https://freesound.org/data/previews/523/523773_11636669-lq.mp3');
-
         paragraphs.forEach(paragraph => {
-            paragraph.addEventListener('touchstart', () => {
-                sound.play();
-                paragraph.classList.toggle('highlight');
+            paragraph.addEventListener('touchend', (event) => {
+            event.preventDefault();  // Previene duplicación de eventos
+            sound.play();
+            paragraph.classList.toggle('highlight');
             });
         });
 
