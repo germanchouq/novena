@@ -338,38 +338,6 @@
 
         </div>
     </div>
-
-    <!-- Controles de música y tema -->
-    <div class="controls">
-        
-        <button id="toggle-theme">🌙 Modo Nocturno</button>
-    </div>
-
-    <script>
-        const paragraphs = document.querySelectorAll('.page p');
-        const progressBar = document.getElementById('progress-bar');
-        const themeButton = document.getElementById('toggle-theme');
-        let isNightMode = false;
-
-        paragraphs.forEach(paragraph => {
-            paragraph.addEventListener('touchend', (event) => {
-            event.preventDefault();  // Previene duplicación de eventos
-            paragraph.classList.toggle('highlight');
-            });
-        });
-
-
-        // Barra de progreso
-        window.addEventListener('scroll', () => {
-            const scroll = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-            progressBar.style.width = `${scroll * 100}%`;
-        });
-
-        // Modo nocturno
-        themeButton.addEventListener('touchstart', () => {
-            document.body.classList.toggle('night-mode');
-            isNightMode = !isNightMode;
-        });
-    </script>
+  
 </body>
 </html>
