@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro Interactivo Navideño</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #d1e8ff, #a1c4fd);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 8px;
+            background-color: #ff5722;
+            width: 0;
+            z-index: 10;
+        }
+
+        .book {
+            width: 95%;
+            max-width: 768px;
+            height: 90%;
+            max-height: 1024px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 10px solid #d4a373;
+            position: relative;
+        }
+
+        .book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/snow.png') repeat;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .page {
+            padding: 40px 30px;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 1.2em;
+            line-height: 1.8;
+            background: #fef8e7;
+        }
+
+        .page p {
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+            font-size: 1.4em;
+            line-height: 2;
+            color: #000;
+            border-radius: 10px;
+            padding: 15px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 235, 59, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(255, 235, 59, 1); }
+        }
+
+        .night-mode {
+            background: linear-gradient(to bottom, #1a202c, #2d3748);
+            color: #e2e8f0;
+        }
+
+        .night-mode .page {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls button {
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <div class="book">
+        <div class="page">
+            <p> Oracion para todos los dias.
+
+                Benignísimo Dios de infinita caridad, que tanto amasteis a los
+                hombres, que les disteis en vuestro hijo la prenda de vuestro amor,
+                para que hecho hombre en las entrañas de una Virgen naciese en
+                un pesebre para nuestra salud y remedio; yo, en nombre de todos
+                los mortales, os doy infinitas gracias por tan soberano beneficio.
+                En retorno de él os ofrezco la pobreza, humildad y demás virtudes de
+                vuestro hijo humanado, suplicándoos por sus divinos méritos, por las
+                incomodidades en que nació y por las tiernas lágrimas que derramó en
+                el pesebre, que dispongáis nuestros corazones con humildad profunda,
+                con amor encendido, con tal desprecio de todo lo terreno, para que Jesús
+                recién nacido tenga en ellos su cuna y more eternamente.
+                Amén.
+                (Se reza tres veces el Avemaría)</p>
+
+            <p>DIA 4 Desde el seno de su madre
+                comenzó el Niño Jesús a poner
+                en práctica su entera sumisión a
+                Dios, que continuó sin la menor
+                interrupción durante toda su vida.
+                Adoraba a su Eterno Padre, le
+                amaba, se sometía a su voluntad,
+                aceptaba con resignación el estado
+                en que se hallaba conociendo toda
+                su debilidad, toda su humillación,
+                todas sus incomodidades.
+                ¿Quién de nosotros quisiera
+                retroceder a un estado semejante
+                con el pleno goce de la razón y
+                de la reflexión?, ¿quién pudiera
+                sostener a sabiendas un martirio
+                tan prolongado, tan penoso de
+                todas maneras?. Por ahí entró
+                el Divino Niño en su dolorosa y
+                humilde carrera; así empezó a
+                anonadarse delante de su Padre,
+                a enseñarnos lo que Dios merece
+                por parte de su criatura, a expiar
+                nuestro orgullo, origen de todos
+                nuestros pecados, y hacemos
+                sentir toda la criminalidad
+                y desórdenes del orgullo.
+                Deseamos hacer una verdadera
+                oración; empecemos por
+                formarnos de ella una exacta idea
+                contemplando al Niño en el seno
+                de su madre, El Divino Niño ora
+                y ora del modo más excelente.
+                No habla, no medita ni se deshace
+                en tiernos afectos. Su mismo
+                estado, aceptado con la intención
+                de honrar a Dios, es su oración y
+                ese estado expresa altamente todo
+                lo que Dios merece y de qué modo
+                quiere ser adorado por nosotros.
+                Unámonos a las oraciones del
+                Niño Dios en el seno de María,
+                unámonos al profundo abatimiento
+                y sea este el primer afecto de
+                nuestro sacrificio a Dios. Démonos
+                a Dios, no para ser algo como lo
+                pretende continuamente nuestra
+                vanidad, sino para ser nada, para
+                quedar eternamente consumidos
+                y anonadados, para renunciar
+                a la estimulación de nosotros
+                mismos, a todo cuidado de nuestra
+                grandeza aunque sea espiritual,
+                a todo movimiento de vanagloria.
+                Desaparezcamos a nuestros propios
+                ojos y que Dios sólo sea todo para
+                nosotros</p>
+
+            <p>Soberana María que por vuestras grandes virtudes y especialmente
+                por vuestra humildad, merecisteis que todo un Dios os escogiese
+                por madre suya, os suplico que vos misma preparéis y dispongáis
+                mi alma y la de todos los que en este tiempo hiciesen esta novena,
+                para el nacimiento espiritual de vuestro adorado hijo. ¡Oh dulcísima
+                madre!, comunicadme algo del profundo recogimiento y divina ternura
+                con que lo aguardasteis vos, para que nos hagáis menos indignos de verle,
+                amarle y adorarle por toda la eternidad. Amén.
+                (Se reza tres veces el Avemaría)</p>
+
+            <p>Oh santísimo José, esposo de María y padre adoptivo de Jesús!
+                Infinitas gracias doy a Dios porque os escogió para tan soberanos
+                misterios y os adornó con todos los dones proporcionados a
+                tan excelente grandeza. Os ruego, por el amor que tuvisteis
+                al Divino Niño, me abracéis en fervorosos deseos de verle y recibirle
+                sacramentalmente, mientras en su divina esencia le veo y le gozo en el
+                cielo.
+                Amén.
+                (Se reza un Padrenuestro,
+                un Avemaría y un Gloria).</p>
+
+            <p>¡Oh, ¡Sapiencia suma del Dios
+                soberano, que a infantil alcance te
+                rebajas sacro! ¡Oh, ¡Divino Niño, ven
+                para enseñarnos la prudencia que
+                hace verdaderos sabios!</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+            
+            <p>¡Oh, Adonai potente que Moisés
+                hablando, de Israel al pueblo diste
+                los mandatos! ¡Ah, ven prontamente
+                para rescatarnos, y que un niño
+                débil muestre fuerte el brazo! </p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>  
+            
+              <p>¡Oh, raíz sagrada de José que en lo
+                alto presenta al orbe tu fragante
+                nardo! Dulcísimo Niño que has sido
+                llamado Lirio de los valles, Bella
+                flor del campo</p>  
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Llave de David que abre al
+                desterrado las cerradas puertas
+                de regio palacio! ¡Sácanos. ¡Oh
+                Niño con tu blanca mano, de la
+                cárcel triste que labró el pecado!</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+            
+            <p>¡Oh, lumbre de Oriente, sol de
+                eternos rayos, que entre las
+                tinieblas tu esplendor veamos!
+                Niño tan precioso, dicha del
+                cristiano, luzca la sonrisa de tus
+                dulces labios.</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Espejo sin mancha, santo de los
+                santos, sin igual imagen del Dios
+                soberano! ¡Borra nuestras culpas,
+                salva al desterrado y en forma de
+                niño, da al mísero amparo.</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Rey de las naciones, Emmanuel
+                preclaro, De Israel anhelo Pastor
+                del rebaño! ¡Niño que apacientas
+                con suave cayado ya la oveja arisca,
+                ya el cordero manso! </p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Ábranse los cielos y llueva de lo
+                alto bienhechor rocío como riego
+                santo! ¡Ven hermoso Niño, ven Dios
+                humanado! ¡Luce, Dios estrella!
+                ¡Brota, flor del campo!</p>   
+
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+                
+            <p>¡Ven, que ya María previene sus
+                brazos, do sus niños vean, en
+                tiempo cercanos! ¡Ven, que ya José,
+                con anhelo sacro, se dispone a
+                hacerse de tu amor sagrario!</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Del débil auxilio, del doliente
+                amparo, consuelo del triste, luz
+                del desterrado! ¡Vida de mi vida,
+                mi dueño adorado, mi constante
+                amigo, mi divino hermano!</p>
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+            
+            <p>¡Ven ante mis ojos, de ti
+                enamorados! ¡Bese ya tus plantas!
+                ¡Bese ya tus manos! ¡Prosternado
+                en tierra, te tiendo los brazos, y
+                aún más que mis frases, te dice mi
+                llanto!</p>    
+
+                <p>¡Ven a nuestras almas,
+                    Ven no tardes tanto!</p>
+
+            <p>¡Ven Salvador nuestro por quien
+               suspiramos.</p>    
+
+               <p>¡Ven a nuestras almas,
+                Ven no tardes tanto!</p>
+
+              <p>Acordaos, ¡oh dulcísimo Niño Jesús!, que dijisteis a la venerable
+                Margarita del santísimo Sacramento, y en persona suya a todos
+                vuestros devotos, estas palabras tan consoladoras para nuestra
+                pobre humanidad agobiada y doliente: “Todo lo que quieras pedir,
+                pídelo por los méritos de mi infancia y nada te será negado”. Llenos
+                de confianza en vos, ¡oh Jesús!, que sois la misma verdad, venimos a
+                exponeros toda nuestra miseria. Ayúdanos a llevar una vida santa, para
+                conseguir una eternidad bienaventurada. Concédenos por los méritos
+                infinitos de vuestra infancia, la gracia de la cual necesitamos tanto. Nos
+                entregamos a vos, ¡oh Niño omnipotente!, seguros de que no quedará
+                frustrada nuestra esperanza, y de que en virtud de vuestra divina
+                promesa, acogeréis y despacharéis favorablemente nuestra súplica.
+                Amén.</p>      
+
+        </div>
+    </div>
+
+    <!-- Controles de música y tema -->
+    <div class="controls">
+        <button id="toggle-music">🎵 Música</button>
+        <button id="toggle-theme">🌙 Modo Nocturno</button>
+    </div>
+
+    <script>
+        const paragraphs = document.querySelectorAll('.page p');
+        const progressBar = document.getElementById('progress-bar');
+        const musicButton = document.getElementById('toggle-music');
+        const themeButton = document.getElementById('toggle-theme');
+        let isNightMode = false;
+
+        // Sonido al seleccionar párrafo
+        const sound = new Audio('https://freesound.org/data/previews/523/523773_11636669-lq.mp3');
+
+        paragraphs.forEach(paragraph => {
+            paragraph.addEventListener('click', () => {
+                sound.play();
+                paragraph.classList.toggle('highlight');
+            });
+        });
+
+        // Barra de progreso
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            progressBar.style.width = `${scroll * 100}%`;
+        });
+
+        // Música de fondo
+        let musicPlaying = false;
+        const backgroundMusic = new Audio('https://freesound.org/data/previews/448/448687_838627-lq.mp3');
+        backgroundMusic.loop = true;
+
+        musicButton.addEventListener('click', () => {
+            if (musicPlaying) {
+                backgroundMusic.pause();
+            } else {
+                backgroundMusic.play();
+            }
+            musicPlaying = !musicPlaying;
+        });
+
+        // Modo nocturno
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            isNightMode = !isNightMode;
+        });
+    </script>
+</body>
+</html>
