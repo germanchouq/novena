@@ -354,10 +354,10 @@
         paragraphs.forEach(paragraph => {
             paragraph.addEventListener('touchend', (event) => {
             event.preventDefault();  // Previene duplicación de eventos
-            sound.play();
             paragraph.classList.toggle('highlight');
             });
         });
+
 
         // Barra de progreso
         window.addEventListener('scroll', () => {
@@ -365,10 +365,8 @@
             progressBar.style.width = `${scroll * 100}%`;
         });
 
-       
-
         // Modo nocturno
-        themeButton.addEventListener('click', () => {
+        themeButton.addEventListener('touchstart', () => {
             document.body.classList.toggle('night-mode');
             isNightMode = !isNightMode;
         });
